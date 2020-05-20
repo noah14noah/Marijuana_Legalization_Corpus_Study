@@ -54,7 +54,7 @@ theparser.lang_filtering()
 # running this function.
 if add_sentiment:
     theparser.add_sentiment()
-
+sys.exit(1)
 ## call the function for calculating the percentage of relevant comments
 if calculate_perc_rel:
     theparser.Perc_Rel_RC_Comment()
