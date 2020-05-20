@@ -225,15 +225,11 @@ for word in set(nltk.corpus.stopwords.words('english')):
 
 ### Define the regex filter used for finding relevant comments
 
-# get the list of words relevant to legality from disk
-# (requires legality.txt to be located in the same directory)
-legality = []
-with open("legality.txt",'r') as f:
-    for line in f:
-        legality.append(re.compile(line.lower().strip()))
-# get the list of words relevant to marijuana from disk
-# (requires marijuana.txtto be located in the same directory)
-marijuana = []
-with open("marijuana.txt",'r') as f:
-    for line in f:
-        marijuana.append(re.compile(line.lower().strip()))
+# get the list of relevant words from disk
+# (requires combined_regex.txt to be located in the same directory)
+#used combined regex as I already created for Biased_Sampler.py 
+
+combined_regex = []
+    with open("combined_regex.txt", 'r') as f: 
+        for line in f: 
+            combined_regex.append(re.compile(line.lower().strip()))
