@@ -22,7 +22,7 @@
 # Request runtime, memory, cores
 #SBATCH --time=24:00:00
 #SBATCH --mem=24G
-#SBATCH -c 14
+#SBATCH -c 24
 #SBATCH -N 1
 #SBATCH --constraint='quadrortx'
 ##SBATCH --constraint='cascade'
