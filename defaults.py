@@ -14,7 +14,7 @@ import numpy as np
 
 ### Model choice hyperparameters
 
-NN = True # Set to False for LDA, to true for neural network classification
+NN = False # Set to False for LDA, to true for neural network classification
 ENTIRE_CORPUS = True # Are we using a random subset of comments, or the whole
 # dataset? The names of model files and output directories will include the
 # value of this variable (e.g. the default LDA output directory label is
@@ -45,7 +45,7 @@ add_sentiment = False # calculates sentiment values under alternative packages
 MaxVocab = 2000000 # maximum size of the vocabulary
 FrequencyFilter = 1 # tokens with a frequency equal or less than this number
 # will be filtered out of the corpus (matters when NN=True)
-no_below = 5 # tokens that appear in less than this number of documents in
+no_below = 2 # tokens that appear in less than this number of documents in
 # corpus will be filtered out (matters when NN=False, i.e. for the LDA model)
 no_above = 0.99 # tokens that appear in more than this fraction of documents in
 # corpus will be filtered out
@@ -227,9 +227,13 @@ for word in set(nltk.corpus.stopwords.words('english')):
 
 # get the list of relevant words from disk
 # (requires combined_regex.txt to be located in the same directory)
-#used combined regex as I already created for Biased_Sampler.py 
 
-combined_regex = []
+engineering = []
     with open("combined_regex.txt", 'r') as f: 
         for line in f: 
             combined_regex.append(re.compile(line.lower().strip()))
+gene = []
+therapy = []
+
+            
+       
