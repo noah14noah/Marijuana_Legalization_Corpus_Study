@@ -226,17 +226,19 @@ for word in set(nltk.corpus.stopwords.words('english')):
 ### Define the regex filter used for finding relevant comments
 
 # get the list of relevant words from disk
+regex_iteration = 2 
+
 engineering = []
-with open("", 'r') as f: 
+with open("engineering_biased_" + regex_iteration + ".txt"", 'r') as f: 
     for line in f: 
         engineering.append(re.compile(line.lower().strip()))
 
 gene = []
-with open("", 'r') as f: 
+with open("genetic_biased_" + regex_iteration + ".txt", 'r') as f: 
     for line in f: 
         gene.append(re.compile(line.lower().strip())) 
 
 disease = []
-with open("", 'r') as f: 
+with open("disease_biased_" + regex_iteration + ".txt", 'r') as f: 
     for line in f: 
         disease.append(re.compile(line.lower().strip()))    
