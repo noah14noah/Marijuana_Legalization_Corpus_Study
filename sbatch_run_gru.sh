@@ -10,7 +10,7 @@
 #SBATCH --account=carney-frankmj-condo
 
 # email error reports
-#SBATCH --mail-user=alexander_fengler@brown.edu 
+#SBATCH --mail-user=noah_jones@brown.edu 
 #SBATCH --mail-type=ALL
 
 # output file
