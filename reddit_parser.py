@@ -87,7 +87,7 @@ class Parser(object):
     #   clean_raw: Delete the raw data file when finished.
     def __init__(self, clean_raw=CLEAN_RAW, dates=dates,
                  download_raw=DOWNLOAD_RAW, hashsums=None, NN=NN, path=path,
-                 disease=disease, engineering=engineering, genetic=genetic, stop=stop,
+                 disease=disease, engineering=engineering, gene=gene, stop=stop,
                  write_original=WRITE_ORIGINAL, vote_counting=vote_counting, author=author, sentiment=sentiment, on_file=on_file):
         # check input arguments for valid type
         assert type(vote_counting) is bool
@@ -109,8 +109,9 @@ class Parser(object):
         self.hashsums = hashsums
         self.NN = NN
         self.path = path
-        self.legality = legality
-        self.marijuana = marijuana
+        self.gene= gene
+        self.disease = disease
+        self.engineering = engineering 
         self.stop = stop
         self.write_original = write_original
         self.vote_counting = vote_counting
@@ -388,7 +389,7 @@ class Parser(object):
                 original_body = html.unescape(comment["body"])  # original text
 
                 # filter comments by relevance to the topic according to regex
-                if any(not exp.search(original_body) is None for exp in marijuana) and any(not exp.search(original_body) is None for exp in legality):
+                if any(not exp.search(original_body) is None for exp in gene) and any(not exp.search(original_body) is None for exp in engineering) and any(not exp.search(original_body) is None for exp in disease):
 
                     # preprocess the comments
                     if self.NN:
