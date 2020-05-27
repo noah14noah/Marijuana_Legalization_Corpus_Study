@@ -87,7 +87,7 @@ class Parser(object):
     #   clean_raw: Delete the raw data file when finished.
     def __init__(self, clean_raw=CLEAN_RAW, dates=dates,
                  download_raw=DOWNLOAD_RAW, hashsums=None, NN=NN, path=path,
-                 legality=legality, marijuana=marijuana, stop=stop,
+                 disease=disease, engineering=engineering, genetic=genetic, stop=stop,
                  write_original=WRITE_ORIGINAL, vote_counting=vote_counting, author=author, sentiment=sentiment, on_file=on_file):
         # check input arguments for valid type
         assert type(vote_counting) is bool
