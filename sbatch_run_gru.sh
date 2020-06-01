@@ -17,7 +17,7 @@
 # %A is the job id (as you find it when searching for your running / finished jobs on the cluster)
 # %a is the array id of your current array job
 
-#SBATCH --output /users/ssloman/data/reddit_parser_%A_%a.outm.  ##Navigate to my folder within Sloman's
+#SBATCH --output /users/ssloman/data/njones7/reddit_parser_%A_%a.outm.  ##Navigate to my folder within Sloman's
 
 # Request runtime, memory, cores
 #SBATCH --time=24:00:00
